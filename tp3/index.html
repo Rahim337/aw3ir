@@ -1,39 +1,109 @@
-<!doctype html>
-<html>
+<!Doctype html>
+
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TP3</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <style>
-        body {
-            background-color: #e9ebee;
-            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-            font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-    </style>
-
-    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-    <!--<link rel="stylesheet" href="style.css">-->
-    <!--<script src="main.js"></script>-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/form-validation.js"></script>
 </head>
 
 <body>
-    <nav>
-        <a href="..">🏠 Index</a> / TP3
-    </nav>
-    <h1>tp3</h1>
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <img src="../galilee.png" alt="Logo Galilee" />
+    <h1>TP #3</h1>
+    <h5>Avec bootstrap 5</h5><br>
+
+    <div class="container">
+
+        <form id="MyForm" onsubmit="return validerFormulaire()" method="post">
+            <div class="row mb-3">
+                <label for="nom" class="col-sm-2 col-form-label">Nom</label>
+                <div class="col-sm-10">
+                    <input type="p" class="form-control" id="nom">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="prénom" class="col-sm-2 col-form-label">Prénom</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="prénom">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="date" class="col-sm-2 col-form-label">Date de Naissance</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="date">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="adresse" class="col-sm-2 col-form-label">Adresse</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="adresse">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="mail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mail">
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-dark">Valider</button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="myModal-Error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Erreur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-error"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal-GlobalError" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Erreur dans le formulaire</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-global-error"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal-Display" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title-display" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-display"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
